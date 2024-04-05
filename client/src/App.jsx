@@ -1,9 +1,9 @@
-import React from 'react'
+import Input from "./components/inputs/Input"
 
 const App = () => {
   return (
     <>
-      
+      <Input />
     </>
   )
 }
