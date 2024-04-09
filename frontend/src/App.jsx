@@ -1,10 +1,10 @@
-import Input from "./components/inputs/Input"
+import Login from "./pages/login/Login"
 
 const App = () => {
   return (
-    <>
-      <Input />
-    </>
+    <div className="h-screen flex justify-center items-center p-6 flex-wrap">
+  <Login />
+    </div>
   )
 }
 

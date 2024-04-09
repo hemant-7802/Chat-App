@@ -1,4 +1,4 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 const conversationSchema = new mongoose.Schema(
   {
@@ -11,7 +11,7 @@ const conversationSchema = new mongoose.Schema(
     messages: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
+        ref: "Message",
         default: []
       },
     ],
