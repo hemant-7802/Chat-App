@@ -3,7 +3,7 @@ import User from '../sidebarUsers/User'
 
 const MessagesContainer = () => {
   return (
-    <div className='flex flex-col w-[50%]'>
+    <div className='hidden sm:flex flex-col w-[50%]'>
       <User fullName='Hemant Bhargav'/>
     </div>
   )

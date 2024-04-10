@@ -5,7 +5,7 @@ import Button from '../Buttons/Button'
 
 const Sidebar = () => {
   return (
-    <div className='w-[25%] hidden sm:flex border-r border-slate-400 p-2 flex-col'>
+    <div className='w-[100%] sm:w-[25%] flex sm:border-r sm:border-slate-400 p-2 flex-col'>
       <SearchInput />
       <div className='divider'/>
       <Users />
