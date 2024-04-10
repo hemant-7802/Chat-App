@@ -5,18 +5,19 @@ const Input = ({
   name = '',
   type = '',
   placeholder = '',
-  classname = 'rounded-md',
-  labelClassname = '',
+  classname = 'rounded-md w-full',
+  labelClassname = ``,
   labelValue = 'true',
   divClassname = 'flex-col',
   value = '',
+  checked = '',
   onChange = () => { }
 
 }) => {
   return (
     <div className={`flex gap-2 w-full p-1 ${divClassname}`}>
-      <label htmlFor={name} className={labelValue === 'true' ? `label font-medium text-base ${labelClassname}` : "hidden"}><span className='label-text'>{label}</span></label>
-      <input type={type} name={name} placeholder={placeholder} className={`w-full input input-bordered focus:ring-1 focus:ring-sky-300 shadow-sm shadow-gray-600 text-gray-300 ${classname}`} onChange={onChange} />
+      <label className={labelValue === 'true' ? `label font-medium text-base ${labelClassname}` : "hidden"}><span className='label-text'>{label}</span></label>
+      <input type={type} name={name} placeholder={placeholder} className={`input input-bordered focus:ring-1 focus:ring-sky-300 shadow-sm shadow-gray-600 text-gray-300 ${classname}`} value={value} onChange={onChange} checked={checked}/>
     </div>
   )
 }
