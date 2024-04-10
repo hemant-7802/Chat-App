@@ -2,6 +2,7 @@ import React from 'react'
 import SearchInput from '../searchInput/SearchInput'
 import Users from './Users'
 import Button from '../Buttons/Button'
+import { BiLogOut } from "react-icons/bi";
 
 const Sidebar = () => {
   return (
@@ -9,7 +10,7 @@ const Sidebar = () => {
       <SearchInput />
       <div className='divider'/>
       <Users />
-      <Button btnName='logout'/>
+      <Button btnName={<BiLogOut className='text-2xl absolute bottom-2'/>}/>
     </div>
   )
 }

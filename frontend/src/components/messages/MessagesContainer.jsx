@@ -1,10 +1,12 @@
 import React from 'react'
-import User from '../sidebarUsers/User'
+import ChatSelected from './ChatSelected'
+import NoChatSelected from './NoChatSelected'
 
 const MessagesContainer = () => {
+  const noChatSelected = true;
   return (
     <div className='hidden sm:flex flex-col w-[50%]'>
-      <User fullName='Hemant Bhargav'/>
+      {noChatSelected ==true ? <NoChatSelected /> : <ChatSelected />}
     </div>
   )
 }
