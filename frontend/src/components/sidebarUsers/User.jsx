@@ -1,16 +1,20 @@
+import { useSocketContext } from "../../context/SocketContext"
 import useConversation from "../../zustand/useConversation"
 
-const User = ({ conversation, lastIdx }) => {
+const User = ({ conversation, id, fullName, username, profilePic, lastIdx, className='' }) => {
   const { selectedConversation, setSelectedConversation } = useConversation()
 
-  const isSelected = selectedConversation?._id === conversation._id
+  const isSelected = selectedConversation?._id === id
+  // const defaultSelected = false;
+  const { onlineUsers } = useSocketContext();
+  const isOnline = onlineUsers.includes(id);
   return (
     <>
-      <div className={`flex gap-3 items-center hover:bg-gray-600 rounded p-2 py-1.5 cursor-pointer ${isSelected ? "bg-gray-600" : ""}`} onClick={()=> setSelectedConversation(conversation)}>
-        <div className='avatar online'>
+      <div className={`flex gap-3 items-center hover:bg-gray-800 transition-all duration-200 rounded-xl p-2 py-1.5 cursor-pointer ${isSelected ? "bg-gray-900" : ""} ${className}`} onClick={() => setSelectedConversation(conversation)}>
+        <div className={`avatar ${isOnline ? "online" : ""}`}>
           <div className='w-12 rounded-full'>
             <img
-              src={conversation.profilePic}
+              src={profilePic}
               alt="User Avatar"
             />
           </div>
@@ -18,8 +22,8 @@ const User = ({ conversation, lastIdx }) => {
 
         <div className='flex flex-col flex-1'>
           <div className='flex flex-col'>
-            <p className='font-bold text-gray-200'>{conversation.fullName}</p>
-            <span className='text-sm'>{conversation.username}</span>
+            <p className='font-semibold tracking-wide text-gray-200'>{fullName}</p>
+            <span className='text-sm'>{username}</span>
           </div>
         </div>
       </div>

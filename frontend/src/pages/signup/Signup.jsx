@@ -26,19 +26,19 @@ const Signup = () => {
     await signup(inputs)
   }
   return (
-    <div className='w-[500px] flex flex-col items-center justify-center min-w-[290px] gap-2'>
+    <div className='w-[600px] flex flex-col items-center justify-center min-w-[290px] gap-2 p-2 rounded-lg shadow-xl shadow-gray-900'>
       <h1 className='text-3xl mb-8 font-semibold text-center text-gray-300'>Join <span className='text-blue-500'>ChatApp</span></h1>
-      <form onSubmit={handleSubmit} className='w-full flex flex-col gap-2'>
-        <Input label="Name" placeholder="Enter your full name" type="text" name="fullName" value={inputs.fullName} onChange={(e) => setInputs({ ...inputs, fullName: e.target.value })} />
+      <form onSubmit={handleSubmit} className='w-[80%] flex flex-col gap-2'>
+        <Input label="Name" placeholder="Enter your full name" type="text" name="fullName" value={inputs.fullName} onChange={(e) => setInputs({ ...inputs, fullName: e.target.value })} autoFocus={true} />
         <Input label="Username" placeholder="Enter your username" type="text" name="username" value={inputs.username} onChange={(e) => setInputs({ ...inputs, username: e.target.value })} />
         <Input label='Password' placeholder='Enter your password' type='password' name='password' value={inputs.password} onChange={(e) => setInputs({ ...inputs, password: e.target.value })} />
         <Input label='Confirm Password' placeholder='Enter your password' type='password' name='confirmPassword' value={inputs.confirmPassword} onChange={(e) => setInputs({ ...inputs, confirmPassword: e.target.value })} />
         <GenderCheckBox onCheckBoxChange={handleCheckBoxChange} selectedGender={inputs.gender} />
-        <div className='text-left text-sm'>
-          <p>Already have an account? <span className='text-blue-500 underline underline-offset-2'><Link to="/login">Sign In</Link></span></p>
+        <div className='text-right text-sm'>
+          <p>Already have an account? <span className='text-fuchsia-500 font-medium underline underline-offset-2 hover:text-fuchsia-600'><Link to="/login">Sign In</Link></span></p>
         </div>
         <div className='w-full'>
-          <Button type='submit' className='bg-sky-500 rounded-lg w-full p-2 text-gray-300 hover:bg-sky-600' disabled={loading} btnName={loading ? <span className='loading loading-spinner'></span> : "Sign Up"}/>
+          <Button type='submit' className='signup-btn bg-sky-500 rounded-lg w-full p-2 text-gray-300 hover:bg-sky-600' disabled={loading} btnName={loading ? <span className='loading loading-spinner'></span> : "Sign Up"}/>
         </div>
       </form>
     </div>

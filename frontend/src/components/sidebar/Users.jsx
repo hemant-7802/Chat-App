@@ -11,6 +11,10 @@ const Users = () => {
           key={conversation._id}
           lastIdx={idx === conversations.length - 1}
           conversation={conversation}
+          id={conversation._id}
+          fullName={conversation.fullName}
+          username={conversation.username}
+          profilePic={conversation.profilePic}
         />
       ))}
 
