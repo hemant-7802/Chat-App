@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ChatSelected from './ChatSelected'
 import NoChatSelected from './NoChatSelected'
+import useConversation from '../../zustand/useConversation'
 
 const MessagesContainer = () => {
-  const noChatSelected = true;
+  const { selectedConversation, setSelectedConversation } = useConversation()
+
+  useEffect(() => {
+
+    // Cleanup Function
+    return () => setSelectedConversation(null)
+  }, [setSelectedConversation])
   return (
     <div className='hidden sm:flex flex-col w-[50%]'>
-      {noChatSelected ==true ? <NoChatSelected /> : <ChatSelected />}
+      {!selectedConversation ? <NoChatSelected /> : <ChatSelected />}
     </div>
   )
 }

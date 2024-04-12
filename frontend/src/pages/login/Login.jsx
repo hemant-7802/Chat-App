@@ -25,7 +25,7 @@ const Login = () => {
           <p>Don't have an account? <span className='text-blue-500 underline underline-offset-2'><Link to="/signup">Sign Up</Link></span></p>
         </div>
         <div className='w-full'>
-          <Button className='bg-sky-500 rounded-lg w-full p-2 hover:bg-sky-600 text-gray-300' disabled={loading} btnName={loading ? <span className='loading loading-spinner'></span> : "Login"} />
+          <Button type='submit' className='bg-sky-500 rounded-lg w-full p-2 hover:bg-sky-600 text-gray-300' disabled={loading} btnName={loading ? <span className='loading loading-spinner'></span> : "Login"} />
         </div>
       </form>
     </div>
