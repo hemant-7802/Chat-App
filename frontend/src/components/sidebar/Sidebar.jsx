@@ -24,7 +24,7 @@ const Sidebar = () => {
     <div className={`overflow-auto sm:border-r sm:border-slate-400 p-2 flex-col relative ${selectedConversation ? 'hidden sm:flex w-[30%]' : 'flex w-[100%] sm:w-[30%]'}`}>
       <div className=''>
         <h1 className='px-5 text-xl capitalize text-gray-200 select-none'>my account</h1>
-        <User fullName={authUser.fullName} profilePic={authUser.profilePic} username={authUser.username} className="py-5 px-5 bg-transparent select-none" />
+        <User fullName={authUser.fullName} profilePic={authUser.profilePic} username={authUser.username} className="py-5 px-5 bg-transparent shadow-inner shadow-purple-500 select-none rounded-b-none"  />
         <SearchInput />
       </div>
       {/* <div className='divider my-0 py-0 h-1' /> */}
