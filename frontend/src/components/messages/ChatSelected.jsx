@@ -19,11 +19,11 @@ const ChatSelected = ({ selectedConversation }) => {
     }
     return (
         <>
-            <User fullName={selectedConversation.fullName} profilePic={selectedConversation.profilePic} />
+            <User fullName={selectedConversation.fullName} profilePic={selectedConversation.profilePic} username={"Tap here to exit chat"}/>
             <Messages />
-            <form onSubmit={handleSubmit} className='px-3 relative' >
+            <form onSubmit={handleSubmit} className='px-2 relative' >
                 <Input classname='ring-0 outline-none focus:ring-0 focus:outline-none border-none text-sm rounded-xl' labelValue='false' placeholder='Type a message...' value={message} onChange={(e) => setMessage(e.target.value)} />
-                <Button type='submit' className='absolute flex items-center inset-y-0 pe-8 end-0' disabled={loading} btnName={loading ? <div className="loading loading-spinner"></div> : <BsSend className="cursor-pointer hover:text-gray-200" />} />
+                <Button type='submit' className='absolute flex items-center inset-y-0 pe-6 end-0' disabled={loading} btnName={loading ? <div className="loading loading-spinner"></div> : <BsSend className="cursor-pointer hover:text-gray-200" />} />
             </form>
         </>
     )

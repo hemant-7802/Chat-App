@@ -15,7 +15,7 @@ const Messages = () => {
     }, 100)
   }, [messages])
   return (
-    <div className='messageScreen px-4 py-2 flex-1 overflow-auto'>
+    <div className='px-4 py-2 flex-1 overflow-auto'>
       {!loading &&
         messages.length > 0 &&
         messages.map((message) => (

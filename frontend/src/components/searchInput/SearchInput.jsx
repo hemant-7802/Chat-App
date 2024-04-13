@@ -26,7 +26,7 @@ const SearchInput = () => {
     } else toast.error('No such user found!');
   }
   return (
-    <form onSubmit={handleSubmit} className='py-2 w-full flex gap-2 items-center'>
+    <form onSubmit={handleSubmit} className='py-2 w-full hidden sm:flex gap-2 items-center'>
       <Input type='text' placeholder='Search...' labelValue='false' classname='rounded-full w-full outline-none shadow-none' divClassname='gap-0 p-0 w-full' value={search} onChange={(e) => setSearch(e.target.value)}/>
       <Button className='btn btn-circle bg-purple-600 hover:bg-purple-700 text-gray-200' btnName={<IoSearchSharp className='text-2xl' />} type='submit' disabled={false}/>
     </form>
