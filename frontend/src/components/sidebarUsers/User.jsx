@@ -1,7 +1,7 @@
 import { useSocketContext } from "../../context/SocketContext"
 import useConversation from "../../zustand/useConversation"
 
-const User = ({ conversation, id, fullName, username, profilePic, lastIdx, className='' }) => {
+const User = ({ conversation, id, fullName, username, profilePic, lastIdx, className='', activeClassName ='' }) => {
   const { selectedConversation, setSelectedConversation } = useConversation()
 
   const isSelected = selectedConversation?._id === id
