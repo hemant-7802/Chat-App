@@ -19,7 +19,7 @@ const ChatSelected = ({ selectedConversation }) => {
     }
     return (
         <>
-            <User fullName={selectedConversation.fullName} profilePic={selectedConversation.profilePic} username={"Tap here to exit chat"}/>
+            <User fullName={selectedConversation.fullName} profilePic={selectedConversation.profilePic} username={"Tap here to exit chat"} className={`${selectedConversation ? "online" : ""}`}/>
             <Messages />
             <form onSubmit={handleSubmit} className='px-2 relative' >
                 <Input classname='ring-0 outline-none focus:ring-0 focus:outline-none border-none text-sm rounded-xl' labelValue='false' placeholder='Type a message...' value={message} onChange={(e) => setMessage(e.target.value)} />

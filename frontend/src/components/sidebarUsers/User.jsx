@@ -11,7 +11,7 @@ const User = ({ conversation, id, fullName, username, profilePic, lastIdx, class
   return (
     <>
       <div className={`flex gap-3 items-center hover:bg-gray-800 transition-all duration-200 rounded-xl p-2 py-1.5 cursor-pointer ${isSelected ? "bg-gray-900" : ""} ${className}`} onClick={() => setSelectedConversation(conversation)}>
-        <div className={`avatar ${(isOnline && selectedConversation) ? "online" : ""}`}>
+        <div className={`avatar ${isOnline ? "online" : ""}`}>
           <div className='w-12 rounded-full'>
             <img
               src={profilePic}
