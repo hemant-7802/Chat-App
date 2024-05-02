@@ -16,7 +16,7 @@ const useListenMessages = () => {
       setMessages([...messages, newMessage])
     })
 
-    return () => socket.off("newMessage")
+    return () => socket?.off("newMessage")
   }, [socket, setMessages, messages])
 }
 export default useListenMessages
